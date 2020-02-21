@@ -8,7 +8,13 @@ int constexpr iterations = 1e5;
 
 struct State
 {
-  uint16_t x = 1, y = 1;
+  uint16_t x = 1;
+  uint16_t y = 1;
+
+  State(int x, int y)
+    : x(x)
+    , y(y)
+  {}
 };
 
 void
@@ -143,11 +149,20 @@ int
 main(int argc, char** argv)
 {
   // dev();
+
+#ifndef NDEBUG
+  cout << "WARNING: Testing with a debug build!\n";
+#endif
+
   cout << "Testing generation of 4 interleaved channels of random numbers, "
           "each with "
        << N << " samples\n";
+
   cout << "Number of iterations " << iterations << "\n";
+
   test_int();
+
   test_float();
+
   return 0;
 }
