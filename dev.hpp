@@ -25,7 +25,7 @@ aligned_free(void* ptr)
   }
 }
 
-static inline inline void
+static inline void
 print(std::string txt, uint16_t ref, __m128i simd)
 {
   uint16_t s[8];
